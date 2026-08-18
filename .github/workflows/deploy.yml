@@ -24,10 +24,10 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      # 项目站部署在 /wact.github.io/ 前缀下；绑定自定义域名后改为 DOCS_BASE=/
+      # 项目站部署在 /wact/ 前缀下；绑定自定义域名后改为 DOCS_BASE=/
       - run: npm run build
         env:
-          DOCS_BASE: /wact.github.io/
+          DOCS_BASE: /wact/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .vitepress/dist

@@ -182,8 +182,8 @@
       const t = a.textContent || ''
       if (t.indexOf('{{') !== -1 || t.trim() === 'text' || t.trim() === '{{ text }}') {
         const href = a.getAttribute('href') || ''
-        // 统一规范化：其它部署前缀（如 GitHub Pages /wact.github.io/）→ /docs/
-        const normBase = (h) => h.replace(/^\/wact\.github\.io\//, '/docs/')
+        // 统一规范化：其它部署前缀（如 GitHub Pages /wact/）→ /docs/
+        const normBase = (h) => h.replace(/^\/wact(?:\.github\.io)?\//, '/docs/')
         const CN_MAP = {
           '/docs/zh/guide/quickstart.html': '快速上手',
           '/docs/zh/guide/introduction.html': '平台介绍',
@@ -224,7 +224,7 @@
       const a = article.tagName === 'A' ? article : article.closest('a')
       const href = a ? a.getAttribute('href') : ''
       // 标准化：其它部署前缀 → /docs/；再去掉中文 locale 段，方便匹配
-      const normBase = (h) => h.replace(/^\/wact\.github\.io\//, '/docs/')
+      const normBase = (h) => h.replace(/^\/wact(?:\.github\.io)?\//, '/docs/')
       const normalized = normBase(href).replace('/docs/zh/', '/docs/').replace(/^\/zh\//, '/docs/')
       const valueNode = article.querySelector('p.link-text-value')
       if (!valueNode) return

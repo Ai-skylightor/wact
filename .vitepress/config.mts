@@ -13,8 +13,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 // =====================================================================
 
 // 部署前缀：本地开发默认 '/'；
-// GitHub Pages 项目站部署在 /wact.github.io/ 下，由 workflow 注入环境变量：
-//   DOCS_BASE=/wact.github.io/
+// GitHub Pages 项目站部署在 /wact/ 下，由 workflow 注入环境变量：
+//   DOCS_BASE=/wact/
 // （若以后绑定自定义域名，把 DOCS_BASE 设为 / 即可）
 const BASE = process.env.DOCS_BASE || '/'
 

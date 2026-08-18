@@ -129,10 +129,10 @@ const HERO_BUTTON_TEXT = {
 }
 
 // 统一规范化成 /docs/... 形式，方便统一匹配：
-//   1) 其它部署前缀（如 GitHub Pages 的 /wact.github.io/）→ /docs/
+//   1) 其它部署前缀（如 GitHub Pages 的 /wact/）→ /docs/
 //   2) 去掉中文 locale 段（/docs/zh/X → /docs/X；base=/ 的 /zh/X → /docs/X）
 function normalizeHref(href) {
-  let h = href.replace(/^\/wact\.github\.io\//, '/docs/')
+  let h = href.replace(/^\/wact(?:\.github\.io)?\//, '/docs/')
   h = h.replace('/docs/zh/', '/docs/')
   h = h.replace(/^\/zh\//, '/docs/')
   return h
