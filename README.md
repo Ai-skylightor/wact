@@ -1,165 +1,84 @@
-# 五号智能云测试平台 · 文档站
+<p align="center">
+  <img src="public/logo.svg" width="110" alt="WACT" />
+</p>
 
-基于 VitePress 构建的中英双语产品文档站。
+<h1 align="center">WACT</h1>
 
-## 📁 目录结构
+<p align="center">
+  <strong>One-stop API & UI test automation platform · AI-powered · No code required</strong><br/>
+  五号智能云测试平台
+</p>
 
-```
-docs/site/
-├─ .vitepress/
-│  ├─ config.mts          # 主配置（双语 locale + 导航 + 侧边栏 + 搜索）
-│  ├─ theme/              # 自定义主题（品牌色 #1e40af）
-│  └─ screenshots/        # 源截图（Playwright 生成）
-├─ public/
-│  ├─ logo.svg            # 产品 Logo
-│  └─ screenshots/        # 文档引用的截图（zh/ + en/）
-├─ scripts/
-│  └─ screenshot.mjs      # 自动截图脚本
-├─ guide/                 # 中文「开始使用」
-├─ api-testing/           # 中文「接口测试」
-├─ ui-testing/            # 中文「UI 测试」
-├─ ai/                    # 中文「AI 能力」
-├─ advanced/              # 中文「高级功能」
-├─ integration/           # 中文「平台集成」
-├─ reference/             # 中文「参考」
-├─ en/                    # 英文版（镜像中文结构）
-├─ index.md               # 中文首页（/）
-└─ package.json
-```
+<p align="center">
+  <a href="https://github.com/Ai-skylightor/wact/actions/workflows/deploy.yml"><img src="https://github.com/Ai-skylightor/wact/actions/workflows/deploy.yml/badge.svg" alt="Deploy" /></a>
+  <a href="https://ai-skylightor.github.io/wact/"><img src="https://img.shields.io/website?url=https%3A%2F%2Fai-skylightor.github.io%2Fwact%2F&label=docs&style=flat-square" alt="Documentation" /></a>
+  <a href="https://vitepress.dev/"><img src="https://img.shields.io/badge/built%20with-VitePress-646CFF?style=flat-square" alt="VitePress" /></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/node-%3E%3D18-339933?style=flat-square" alt="Node" /></a>
+</p>
 
-## 🚀 本地开发
+<p align="center">
+  📖 <a href="https://ai-skylightor.github.io/wact/">Documentation</a> &nbsp;·&nbsp;
+  🚀 <a href="https://ai-skylightor.github.io/wact/guide/quickstart.html">Quick Start</a> &nbsp;·&nbsp;
+  🇨🇳 <a href="https://ai-skylightor.github.io/wact/zh/">中文文档</a> &nbsp;·&nbsp;
+  🐛 <a href="https://github.com/Ai-skylightor/wact/issues">Report an Issue</a>
+</p>
 
-### 前置要求
-- Node.js 18+（推荐 20 LTS 或 22 LTS）
-- npm 9+
+---
 
-### 启动
+## 📖 Documentation
 
-```bash
-cd docs/site
-npm install
-npm run dev
-```
+The documentation is **bilingual** (English by default, Simplified Chinese available) and published automatically on every push:
 
-访问 `http://localhost:5173`，中文默认；点右上角切换 English。
+| Section | Contents |
+|---|---|
+| [Getting Started](https://ai-skylightor.github.io/wact/guide/introduction.html) | Introduction · [5-min Quickstart](https://ai-skylightor.github.io/wact/guide/quickstart.html) · Installation · Core Concepts |
+| [API Testing](https://ai-skylightor.github.io/wact/api-testing/overview.html) | Swagger / JMeter import · Cases & suites · Mock service · Reports |
+| [UI Testing](https://ai-skylightor.github.io/wact/ui-testing/overview.html) | Visual workflow editor · Element library · Scheduled runs · Video replay |
+| [Performance Testing](https://ai-skylightor.github.io/wact/perf/overview.html) | Monthly load testing · Live progress · Trend tracking |
+| [AI Features](https://ai-skylightor.github.io/wact/ai/overview.html) | Param generation · Exception cases · UI step generation · Auto exploration |
+| [Advanced](https://ai-skylightor.github.io/wact/advanced/data-factory.html) | Data Factory · Flow orchestration · Variables · Task center |
+| [Integration](https://ai-skylightor.github.io/wact/integration/ci-cd.html) | CI/CD triggers · Regression suites · Jenkins · CLI |
+| [Reference](https://ai-skylightor.github.io/wact/reference/faq.html) | API examples · FAQ · Glossary |
 
-### 构建
+## ✨ Highlights
 
-```bash
-npm run build
-```
+- **API + UI in one platform** — REST/WebSocket cases and browser UI flows share the same project structure; mix them in a single CI regression suite.
+- **Zero-code orchestration** — drag-and-drop steps, dependency inference, variable extraction without scripting.
+- **AI woven into the lifecycle** — generates params, exception/boundary cases, UI steps and entire workflows; auto-explores websites to discover testable scenarios.
+- **Data Factory** — tree-managed test data with random generators (phone, email, national ID, custom rules).
+- **CI/CD ready** — scheduled tasks, CI triggers, Jenkins integration, CLI.
+- **Bilingual docs with local search** — full-text search in both English and Chinese (`Ctrl` + `K`).
 
-产物在 `.vitepress/dist/`，是纯静态 HTML/CSS/JS，可部署到任意静态服务器。
-
-### 本地预览构建产物
+## 🚀 Quick Start (local development)
 
 ```bash
-npm run preview
+npm install        # install dependencies (Node.js >= 18)
+npm run dev        # dev server at http://localhost:5173
+npm run build      # static site -> .vitepress/dist/
+npm run preview    # preview the production build
 ```
 
-## 📷 重新截图
+> When deploying under a sub-path, set the `DOCS_BASE` environment variable (e.g. `DOCS_BASE=/wact/`). See `.vitepress/config.mts`.
 
-截图脚本依赖测试平台运行中（默认 `http://localhost:12180`）。
+## 📦 Project Structure
 
-```bash
-# 1. 启动测试平台（另一个终端）
-cd ../../           # 到 automated_test_platform/
-python run.py
-
-# 2. 确保有一个有效账号（脚本用 Victor / Whzn123456@ 登录）
-#    或修改 scripts/screenshot.mjs 里的 TEST_USER
-
-# 3. 运行截图
-cd docs/site
-npm run screenshots
-
-# 4. 复制截图到 public/
-xcopy /E /I /Y .vitepress\screenshots\zh public\screenshots\zh
-xcopy /E /I /Y .vitepress\screenshots\en public\screenshots\en
+```
+├─ .github/workflows/    # CI: build & deploy to GitHub Pages
+├─ .vitepress/           # site config, custom theme, build scripts
+├─ public/               # logo + screenshots referenced by the docs
+├─ scripts/              # build post-processing & screenshot tooling
+├─ guide/ api-testing/ ui-testing/ perf/ ai/ advanced/ integration/ reference/   # Chinese sources (served under /zh/)
+├─ en/                   # English sources (served at the site root)
+└─ index.md              # home page
 ```
 
-## 🌍 部署
+## 🔄 Deployment
 
-### 方式 1：Nginx / 任意静态服务器
+Pushes to `main` are built and published to GitHub Pages automatically by [GitHub Actions](.github/workflows/deploy.yml):
 
-```bash
-npm run build
-# 把 .vitepress/dist/ 整个目录上传到服务器
-# Nginx 配置 root 指向 dist/
-```
+- **Live site:** <https://ai-skylightor.github.io/wact/>
+- **Chinese version:** <https://ai-skylightor.github.io/wact/zh/>
 
-Nginx 示例：
-```nginx
-server {
-    listen 80;
-    server_name docs.your-domain.com;
-    root /var/www/test-docs;     # 指向 dist/
-    index index.html;
-    location / {
-        try_files $uri $uri/ $uri.html =404;
-    }
-}
-```
+## 🤝 Contributing
 
-### 方式 2：GitHub Pages
-
-```bash
-npm run build
-# 把 dist/ 推送到 gh-pages 分支，或用 GitHub Actions 自动部署
-```
-
-### 方式 3：集成到测试平台
-
-把 `dist/` 挂载到 FastAPI：
-
-```python
-# 在 backend/app.py 加一行
-from fastapi.staticfiles import StaticFiles
-app.mount("/docs", StaticFiles(directory="../docs/site/.vitepress/dist", html=True), name="docs")
-```
-
-访问 `http://your-server:12180/docs/` 即可。
-
-## ✨ 特性
-
-- **中英双语**：`/`（中文）+ `/en/`（英文），右上角一键切换
-- **本地搜索**：Ctrl+K 全文搜索，中英文都能搜到
-- **暗黑模式**：自动跟随系统，也可手动切换
-- **响应式**：手机/平板/桌面自适应
-- **品牌化**：自定义 Logo、品牌色（#1e40af）、截图阴影圆角
-- **OG 图**：分享到社交平台自动生成预览卡片
-
-## 📝 内容结构（76 页）
-
-| 区域 | 中文 | 英文 | 说明 |
-|---|---|---|---|
-| 开始使用 | 4 页 | 4 页 | 介绍 / 快速上手 / 部署 / 核心概念 |
-| 接口测试 | 12 页 | 12 页 | 覆盖接口平台全部 18 个模块 |
-| UI 测试 | 5 页 | 5 页 | 流程编排 / 元素库 / 执行 / 模板 |
-| AI 能力 | 5 页 | 5 页 | 模型配置 / 参数生成 / 异常用例 / UI 辅助 |
-| 高级功能 | 4 页 | 4 页 | 数据工厂 / 流程编排 / 变量体系 / 任务中心 |
-| 平台集成 | 4 页 | 4 页 | CI/CD / 回归集 / Jenkins / CLI |
-| 参考 | 3 页 | 3 页 | API 示例 / FAQ / 术语表 |
-
-## 🔧 维护指南
-
-### 新增页面
-
-1. 在对应目录创建 `.md` 文件（如 `api-testing/new-feature.md`）
-2. 在 `.vitepress/config.mts` 的 `sidebar` 里加一项
-3. 英文版同步在 `en/` 下创建镜像文件
-
-### 修改导航
-
-编辑 `.vitepress/config.mts` 的 `nav` 字段（root 是中文，en 是英文）。
-
-### 更新截图
-
-平台 UI 变更后，重跑 `npm run screenshots`，覆盖 `public/screenshots/`。
-
-## ⚠️ 注意事项
-
-- **变量语法**：文档里的 `${var}` &#123;&#123;var&#125;&#125; 等示例已用 HTML 实体转义（`&#123;`），新增内容时若含 &#123;&#123; 需同样处理，否则 VitePress 构建会报 Vue 模板解析错误
-- **截图账号**：`scripts/screenshot.mjs` 里的 `TEST_USER` 是测试账号，生产环境部署前务必改成文档专用账号或脱敏
-- **凭证脱敏**：所有示例里的 Token、IP 已替换为占位符（`<YOUR_CI_TOKEN>`、`<your-server-ip>`），不要回填真实凭证
-
+Found a typo or want to improve the docs? Pull requests are welcome — feel free to [open an issue](https://github.com/Ai-skylightor/wact/issues) first.

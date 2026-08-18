@@ -23,6 +23,9 @@ export default defineConfig({
   title: 'WACT',
   description: 'One-stop API & UI test automation · AI-powered · No code required',
 
+  // README 只在 GitHub 仓库页展示，不参与站点构建
+  srcExclude: ['README.md'],
+
   // 🌍 默认英文的关键：重写输出路径（源文件不动）
   rewrites: {
     'en/:rest*': ':rest*',
