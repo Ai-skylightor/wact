@@ -93,7 +93,7 @@ const RULES = [
   rule(/\{\{\s*theme\.lightModeSwitchTitle[^}]*\}\}/g, '切换到浅色模式', 'Switch to light mode'),
   rule(/\{\{\s*theme\.darkModeSwitchTitle[^}]*\}\}/g, '切换到深色模式', 'Switch to dark mode'),
   // 站点标题
-  rule(/\{\{\s*site\.title\s*\}\}/g, '零代码自动化测试平台', 'Zero-Code Testing Platform'),
+  rule(/\{\{\s*site\.title\s*\}\}/g, '零代码自动化测试平台', 'WACT'),
   // 当前语言标签（导航栏下拉）
   rule(/\{\{\s*currentLang\.label\s*\}\}/g, '', ''),
   // resolveTitle —— 动态绑定，构建时无法求值，统一清空（由客户端脚本处理特殊情况）

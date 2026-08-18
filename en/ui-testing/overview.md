@@ -1,11 +1,11 @@
 ---
 title: UI Testing Platform Overview
-description: Overview of the UI testing module of the WuHao AI Cloud Testing Platform — its modules and core design philosophy
+description: Overview of the UI testing module of WACT — its modules and core design philosophy
 ---
 
 # UI Testing Platform Overview
 
-The UI Testing Platform is the WuHao AI Cloud Testing Platform's visual testing solution for the **web**. Testers orchestrate flows via **drag-and-drop steps + element picking + AI-assisted generation**. Playwright drives the browser to execute, and produces per-step screenshots, video replays, and exportable test reports.
+The UI Testing Platform is WACT's visual testing solution for the **web**. Testers orchestrate flows via **drag-and-drop steps + element picking + AI-assisted generation**. Playwright drives the browser to execute, and produces per-step screenshots, video replays, and exportable test reports.
 
 Compared with the platform's existing API Testing module, UI testing targets the real user operation path (clicks, form fills, page assertions) and aims to replace the manual "click, click, click" regression. This section starts with the platform's full capability landscape, so you can build a mental model before diving in.
 

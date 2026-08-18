@@ -1,11 +1,11 @@
 ---
 title: Platform Overview
-description: What the WuHao AI Cloud Testing Platform is, the problems it solves, and who it is for
+description: What WACT is, the problems it solves, and who it is for
 ---
 
 # Platform Overview
 
-The WuHao AI Cloud Testing Platform is a **one-stop automated testing platform** for both API and UI testing. It consolidates test assets that are traditionally scattered across Postman collections, JMeter scripts, and code repositories into a single visual interface: import a Swagger document to generate test cases, drag-and-drop to orchestrate dependencies, click to execute, and get an automatic report when the run finishes.
+WACT is a **one-stop automated testing platform** for both API and UI testing. It consolidates test assets that are traditionally scattered across Postman collections, JMeter scripts, and code repositories into a single visual interface: import a Swagger document to generate test cases, drag-and-drop to orchestrate dependencies, click to execute, and get an automatic report when the run finishes.
 
 The core design goal of the platform is to **lower the barrier to adopting automated testing**. Test engineers do not need to write Python or Java code, developers do not need to maintain script repositories, and QA leads get unified execution records and quality metrics. At the same time, AI is woven deeply into every stage of the testing lifecycle: AI infers case dependencies, AI generates exception scenarios, AI generates test parameters, and AI orchestrates flows.
 

@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: WuHao AI Cloud Testing Platform
+  name: WACT
   text: Automated Testing, Reimagined
   tagline: One-stop API & UI test automation · AI-powered · No code required
   image:
     src: /logo.svg
-    alt: WuHao AI Cloud Testing Platform
+    alt: WACT
   actions:
     - theme: brand
       text: Quickstart
@@ -49,7 +49,7 @@ features:
     linkText: Explore CI/CD →
 ---
 
-## Why WuHao AI Cloud Testing Platform
+## Why WACT
 
 <details>
 <summary>🎯 Who is it for?</summary>

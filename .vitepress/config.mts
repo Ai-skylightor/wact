@@ -20,7 +20,7 @@ const BASE = process.env.DOCS_BASE || '/'
 
 export default defineConfig({
   base: BASE,
-  title: 'WuHao AI Cloud Testing Platform',
+  title: 'WACT',
   description: 'One-stop API & UI test automation · AI-powered · No code required',
 
   // 🌍 默认英文的关键：重写输出路径（源文件不动）
@@ -70,7 +70,7 @@ export default defineConfig({
 
     // 社交链接（顶部右上角）
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/your-org/zero-code-testing' },
+      { icon: 'github', link: 'https://github.com/Ai-skylightor/wact' },
     ],
 
     // 顶部搜索（本地 minisearch，中英都能搜到）

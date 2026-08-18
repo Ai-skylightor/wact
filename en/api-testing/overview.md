@@ -5,7 +5,7 @@ description: A map of all 19 functional modules, their relationships, and typica
 
 # API Testing Platform Overview
 
-The API Testing Platform is the core of the WuHao AI Cloud Testing Platform, covering the full lifecycle from API document import, case management, and parameter configuration, through Mock services to execution and reporting. This page is the map for the entire API Testing section: get the big picture first, then dig into specific feature pages as needed.
+The API Testing Platform is the core of WACT, covering the full lifecycle from API document import, case management, and parameter configuration, through Mock services to execution and reporting. This page is the map for the entire API Testing section: get the big picture first, then dig into specific feature pages as needed.
 
 ![Dashboard](/screenshots/en/dashboard.png)
 

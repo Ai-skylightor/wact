@@ -5,7 +5,7 @@ description: Multi-workspace isolation, member management, and role-based access
 
 # Space Management
 
-A Space (Workspace) is the multi-tenant isolation unit of the WuHao AI Cloud Testing Platform. Each space has its own independent test cases, test suites, mock services, execution records, and all other business data. Data between spaces is completely isolated.
+A Space (Workspace) is the multi-tenant isolation unit of WACT. Each space has its own independent test cases, test suites, mock services, execution records, and all other business data. Data between spaces is completely isolated.
 
 ## Who Can Use It
 

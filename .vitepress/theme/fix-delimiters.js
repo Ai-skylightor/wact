@@ -12,7 +12,7 @@
   // key = 原始 {{ }} 模式（正则字符串），value = [中文, 英文]
   const RULES = [
     // 站点标题
-    { re: /\{\{\s*site\.title\s*\}\}/g, zh: '零代码自动化测试平台', en: 'Zero-Code Testing Platform' },
+    { re: /\{\{\s*site\.title\s*\}\}/g, zh: '零代码自动化测试平台', en: 'WACT' },
     // 跳到正文链接（带各种变体/access key）
     { re: /\{\{\s*theme\.skipToContentLabel[^}]*\}\}/g, zh: '跳到内容', en: 'Skip to content' },
     // 搜索按钮
@@ -250,7 +250,7 @@
   }
   function fixUiLabels(isEn) {
     const I18N = {
-      navTitle: ['零代码自动化测试平台', 'Zero-Code Testing Platform'],
+      navTitle: ['零代码自动化测试平台', 'WACT'],
       searchPlaceholder: ['搜索文档', 'Search'],
       searchAria: ['搜索文档', 'Search'],
       langBtnAria: ['更改语言', 'Change language'],

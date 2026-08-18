@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: 五号智能云测试平台
-  text: WuHao AI Cloud Testing Platform
+  text: WACT
   tagline: 一站式接口与 UI 自动化测试 · AI 驱动 · 零代码上手
   image:
     src: /logo.svg
