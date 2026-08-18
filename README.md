@@ -41,12 +41,30 @@ The documentation is **bilingual** (English by default, Simplified Chinese avail
 
 ## ✨ Highlights
 
-- **API + UI in one platform** — REST/WebSocket cases and browser UI flows share the same project structure; mix them in a single CI regression suite.
-- **Zero-code orchestration** — drag-and-drop steps, dependency inference, variable extraction without scripting.
-- **AI woven into the lifecycle** — generates params, exception/boundary cases, UI steps and entire workflows; auto-explores websites to discover testable scenarios.
-- **Data Factory** — tree-managed test data with random generators (phone, email, national ID, custom rules).
-- **CI/CD ready** — scheduled tasks, CI triggers, Jenkins integration, CLI.
-- **Bilingual docs with local search** — full-text search in both English and Chinese (`Ctrl` + `K`).
+### AI-Native Testing
+
+- **AI case generation with a review loop** — AI drafts test cases from your inputs, a second AI pass reviews them for quality, then humans vote: only approved cases enter the suite. Import via Excel or generate from scratch — both flow through the same AI-review → human-vote pipeline.
+- **AI website exploration** — give it a URL and a headless browser discovers every interactive element, classifies them by testability, plans scenarios and generates complete UI test flows automatically. Postman and Selenium can only *record*; WACT *discovers*.
+- **AI exception & boundary cases** — missing required fields, malformed formats, SQL injection and other edge cases generated without writing a single script.
+- **AI dependency inference** — analyzes API responses to infer call chains, orders case execution automatically and chains pre/post dependencies.
+- **Multi-model support** — OpenAI, Anthropic, DeepSeek, Zhipu, Qwen or a local Ollama; switch models per feature.
+- **Built-in MCP Server** — the whole platform is exposed as MCP tools, so any MCP-compatible AI agent can create and run tests directly.
+
+### One Platform, Both Worlds
+
+- **API + UI in one project tree** — REST/WebSocket cases and browser UI flows share the same projects, modules and variables; mix them in a single CI regression suite ("call the API to place an order, then verify the order page via UI" — one pipeline, end to end).
+- **Zero-code orchestration** — drag-and-drop steps with conditional branches and loops; no scripting required.
+- **Smart parameters** — extract fields from any response and reference them downstream (`${var}`); global and local scopes; smart base-URL correction.
+- **Data Factory** — tree-managed test data with random generators (phone, email, national ID, custom rules), reused across cases with one click.
+- **One-click imports** — Swagger / OpenAPI and JMeter parsing with auto module mapping.
+
+### Execution, Integration & Trust
+
+- **Full audit trail for UI runs** — per-step screenshots, video replay, and a live VNC view of the running browser.
+- **CI/CD everywhere** — scheduled tasks, CI trigger API, API+UI regression suites, Jenkins integration and a CLI.
+- **Monthly load testing** — orchestrated 500-concurrency runs with live progress, automatic reports and cross-month trend tracking.
+- **Multi-workspace isolation** — spaces with independent data and viewer/editor/owner roles, plus a monitoring center for admins.
+- **Bilingual docs with local search** — full-text search in English and Chinese (`Ctrl` + `K`).
 
 ## 🚀 Quick Start (local development)
 
