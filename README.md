@@ -5,8 +5,7 @@
 <h1 align="center">WACT</h1>
 
 <p align="center">
-  <strong>One-stop API & UI test automation platform · AI-powered · No code required</strong><br/>
-  五号智能云测试平台
+  <strong>One-stop API &amp; UI test automation platform · AI-powered · No code required</strong>
 </p>
 
 <p align="center">
