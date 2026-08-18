@@ -1,0 +1,17 @@
+{
+  "name": "wuhao-cloud-testing-docs",
+  "version": "1.0.0",
+  "description": "五号智能云测试平台 - 双语文档站",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "postbuild": "node scripts/fix-built-html.mjs",
+    "preview": "vitepress preview",
+    "screenshots": "node scripts/screenshot.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "playwright": "^1.49.0"
+  }
+}

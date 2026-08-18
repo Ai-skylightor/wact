@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- 盾牌主体多层渐变（深蓝→宝石蓝→深蓝，形成金属光泽） -->
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e3a8f"/>
+      <stop offset="35%" stop-color="#2563eb"/>
+      <stop offset="65%" stop-color="#1d4ed8"/>
+      <stop offset="100%" stop-color="#0c1d4d"/>
+    </linearGradient>
+    <!-- 盾牌左侧高光（金属反光，斜向） -->
+    <linearGradient id="metalSheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="25%" stop-color="#bfdbfe" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- 盾牌顶部高光带 -->
+    <linearGradient id="topHighlight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dbeafe" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- 金属边框渐变（外亮内暗，模拟立体边） -->
+    <linearGradient id="metalEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="40%" stop-color="#60a5fa"/>
+      <stop offset="70%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#0a1840"/>
+    </linearGradient>
+    <!-- 流动光晕渐变（颜色循环） -->
+    <linearGradient id="haloGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0">
+        <animate attributeName="stop-color" values="#3b82f6;#8b5cf6;#06b6d4;#3b82f6" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" stop-color="#60a5fa" stop-opacity="0.5">
+        <animate attributeName="stop-color" values="#60a5fa;#a78bfa;#22d3ee;#60a5fa" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#1e40af" stop-opacity="0">
+        <animate attributeName="stop-color" values="#1e40af;#6d28d9;#0891b2;#1e40af" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <!-- 勾选发光底层 -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <!-- 盾牌剪裁路径（让科技斜线限制在盾牌内） -->
+    <clipPath id="shieldClip">
+      <path d="M0 -34 L26 -22 V4 C26 20 14 30 0 34 C-14 30 -26 20 -26 4 V-22 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ========== 流动光晕层（呼吸脉冲） ========== -->
+  <g transform="translate(60 60)">
+    <!-- 外层光环：缩放+不透明度脉冲 -->
+    <circle r="48" fill="url(#haloGrad)" opacity="0.5">
+      <animate attributeName="r" values="46;56;46" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+    <!-- 内层光环：反相脉冲（形成层次感） -->
+    <circle r="42" fill="url(#haloGrad)" opacity="0.4">
+      <animate attributeName="r" values="42;38;42" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="5s" repeatCount="indefinite" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+    </circle>
+  </g>
+
+  <!-- ========== 盾牌主体（金属质感） ========== -->
+  <g transform="translate(60 60)">
+    <!-- 盾牌阴影底层（让盾牌有重量感） -->
+    <path d="M0 -32 L24 -21 V3 C24 19 13 28 0 32 C-13 28 -24 19 -24 3 V-21 Z"
+          fill="#000000" opacity="0.3" transform="translate(2 3)"/>
+
+    <!-- 盾牌主体填充（多层渐变） -->
+    <path d="M0 -34 L26 -22 V4 C26 20 14 30 0 34 C-14 30 -26 20 -26 4 V-22 Z"
+          fill="url(#shieldGrad)"/>
+
+    <!-- 内部科技装饰（剪裁在盾牌内） -->
+    <g clip-path="url(#shieldClip)" opacity="0.6">
+      <!-- 左下到右上的科技斜线（3 条平行） -->
+      <line x1="-30" y1="20" x2="30" y2="-20" stroke="#60a5fa" stroke-width="0.6" opacity="0.5"/>
+      <line x1="-30" y1="14" x2="30" y2="-26" stroke="#93c5fd" stroke-width="0.4" opacity="0.4"/>
+      <line x1="-30" y1="26" x2="30" y2="-14" stroke="#3b82f6" stroke-width="0.5" opacity="0.5"/>
+      <!-- 几何网格点（科技感） -->
+      <circle cx="-14" cy="14" r="0.8" fill="#93c5fd" opacity="0.8"/>
+      <circle cx="14" cy="-14" r="0.8" fill="#93c5fd" opacity="0.8"/>
+      <circle cx="-8" cy="22" r="0.6" fill="#60a5fa" opacity="0.7"/>
+      <circle cx="10" cy="20" r="0.6" fill="#60a5fa" opacity="0.7"/>
+    </g>
+
+    <!-- 盾牌左上金属反光（斜向光泽） -->
+    <path d="M0 -34 L26 -22 V4 C26 20 14 30 0 34 C-14 30 -26 20 -26 4 V-22 Z"
+          fill="url(#metalSheen)" opacity="0.7"/>
+    <!-- 盾牌顶部高光带 -->
+    <path d="M0 -34 L26 -22 V4 C26 20 14 30 0 34 C-14 30 -26 20 -26 4 V-22 Z"
+          fill="url(#topHighlight)"/>
+
+    <!-- 盾牌金属边框（双层：外亮内暗形成立体感） -->
+    <path d="M0 -34 L26 -22 V4 C26 20 14 30 0 34 C-14 30 -26 20 -26 4 V-22 Z"
+          fill="none" stroke="url(#metalEdge)" stroke-width="2" stroke-linejoin="round"/>
+    <!-- 内层细边（增加精致感） -->
+    <path d="M0 -31 L23 -20 V3 C23 18 12 27 0 31 C-12 27 -23 18 -23 3 V-20 Z"
+          fill="none" stroke="#93c5fd" stroke-width="0.5" stroke-opacity="0.5"/>
+
+    <!-- 顶部高光点（金属反光的核心亮点） -->
+    <ellipse cx="-8" cy="-26" rx="3.5" ry="2" fill="#ffffff" opacity="0.85"/>
+    <ellipse cx="-8" cy="-26" rx="1.5" ry="0.8" fill="#ffffff">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- ========== 勾选符号（逐笔画出，周期性重画） ========== -->
+    <!-- 底层发光勾 -->
+    <path d="M-13 -1 L-3 10 L15 -11"
+          stroke="#60a5fa" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          stroke-dasharray="48" stroke-dashoffset="48" filter="url(#glow)" opacity="0.8">
+      <animate attributeName="stroke-dashoffset"
+        values="48;48;0;0;0"
+        keyTimes="0;0.15;0.55;0.92;1"
+        dur="4s" repeatCount="indefinite"/>
+    </path>
+    <!-- 主体白色勾 -->
+    <path d="M-13 -1 L-3 10 L15 -11"
+          stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"
+          stroke-dasharray="48" stroke-dashoffset="48">
+      <animate attributeName="stroke-dashoffset"
+        values="48;48;0;0;0"
+        keyTimes="0;0.15;0.55;0.92;1"
+        dur="4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- ========== 装饰光点（环绕轨道） ========== -->
+    <g opacity="0.85">
+      <circle r="2" fill="#22d3ee">
+        <animateMotion dur="6s" repeatCount="indefinite"
+          path="M0,-44 A44,44 0 1,1 -0.1,-44"/>
+      </circle>
+      <circle r="1.5" fill="#a78bfa">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="-2s"
+          path="M0,-44 A44,44 0 1,1 -0.1,-44"/>
+      </circle>
+      <circle r="1.2" fill="#60a5fa">
+        <animateMotion dur="6s" repeatCount="indefinite" begin="-4s"
+          path="M0,-44 A44,44 0 1,1 -0.1,-44"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- 无障碍：尊重用户的「减少动效」系统偏好 -->
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      animate, animateTransform, animateMotion { display: none !important; }
+    }
+  </style>
+</svg>
+

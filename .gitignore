@@ -1,0 +1,10 @@
+node_modules/
+.vitepress/dist/
+# 构建产物备份（rename-swap 后的旧 dist，确认新版无误后可手动删除）
+.vitepress/dist-*/
+.vitepress/cache/
+# VitePress 热更新临时缓存文件
+.vitepress/*.timestamp-*.mjs
+*.log
+.DS_Store
+Thumbs.db
