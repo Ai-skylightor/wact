@@ -1,0 +1,31 @@
+name: 📝 Docs Feedback
+description: Point out incorrect, outdated, or confusing documentation
+labels: ["documentation", "feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Found a typo, an outdated screenshot, or a confusing explanation? Report it here.
+  - type: input
+    id: page-url
+    attributes:
+      label: Which page?
+      description: Paste the URL of the documentation page.
+      placeholder: https://ai-skylightor.github.io/wact/...
+    validations:
+      required: true
+  - type: dropdown
+    id: lang
+    attributes:
+      label: Page language
+      options:
+        - English
+        - 简体中文
+        - Both
+  - type: textarea
+    id: issue
+    attributes:
+      label: What should be fixed?
+      description: Describe what is wrong or what you expected instead.
+    validations:
+      required: true

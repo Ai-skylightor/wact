@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://ai-skylightor.github.io/wact/
+    about: Read the WACT documentation first — most questions are answered there.

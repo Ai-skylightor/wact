@@ -1,0 +1,33 @@
+name: 🐛 Bug Report
+description: Something is broken — report it and help us fix it
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in the sections below.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug. What did you do, what did you expect, what happened instead?
+      placeholder: Steps to reproduce...
+    validations:
+      required: true
+  - type: input
+    id: page-url
+    attributes:
+      label: Related page / URL
+      description: If the bug relates to a documentation page, paste its URL.
+      placeholder: https://ai-skylightor.github.io/wact/...
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, OS, platform version — anything that helps reproduce it.
+      placeholder: Chrome 126 / Windows 11 / WACT v...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Screenshots / logs
+      description: Optional. Paste screenshots or error logs.

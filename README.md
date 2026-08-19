@@ -19,7 +19,7 @@
   📖 <a href="https://ai-skylightor.github.io/wact/">Documentation</a> &nbsp;·&nbsp;
   🚀 <a href="https://ai-skylightor.github.io/wact/guide/quickstart.html">Quick Start</a> &nbsp;·&nbsp;
   🇨🇳 <a href="https://ai-skylightor.github.io/wact/zh/">Chinese Docs</a> &nbsp;·&nbsp;
-  🐛 <a href="https://github.com/Ai-skylightor/wact/issues">Report an Issue</a>
+  🐛 <a href="https://github.com/Ai-skylightor/wact/issues/new/choose">Report an Issue</a>
 </p>
 
 ---
